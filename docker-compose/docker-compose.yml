@@ -18,7 +18,12 @@ services:
     depends_on:
       - wait_for_db
     image: tomcat:alpine
-    ports:
-      - 8080:8080
     volumes:
       - ./webapps:/usr/local/tomcat/webapps
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "80:80"
