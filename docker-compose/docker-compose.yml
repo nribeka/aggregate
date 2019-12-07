@@ -20,12 +20,6 @@ services:
     image: tomcat:alpine
     volumes:
       - ./webapps:/usr/local/tomcat/webapps
-
-  nginx:
-    image: nginx:1.15-alpine
-    depends_on:
-      - tomcat8
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
+      - ./tomcat8/server.xml:/usr/local/tomcat/conf/server.xml
     ports:
       - 80:80
