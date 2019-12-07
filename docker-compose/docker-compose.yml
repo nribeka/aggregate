@@ -22,7 +22,7 @@ services:
       - ./webapps:/usr/local/tomcat/webapps
 
   nginx:
-    image: nginx:latest
+    image: nginx:1.15-alpine
     volumes:
       - ./nginx:/etc/nginx/conf.d
     ports:
