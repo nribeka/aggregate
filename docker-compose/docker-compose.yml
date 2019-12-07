@@ -23,6 +23,8 @@ services:
 
   nginx:
     image: nginx:1.15-alpine
+    depends_on:
+      - tomcat8
     volumes:
       - ./nginx:/etc/nginx/conf.d
     ports:
